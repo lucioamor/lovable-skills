@@ -35,6 +35,11 @@ See [`skills/wireframe.md`](./skills/wireframe.md) for the full spec.
 
 See [`examples/WIREFRAME-nxlv.md`](./examples/WIREFRAME-nxlv.md) for a real-world example generated from the [NXLV.AI](https://be.nxlv.ai) codebase.
 
+## Author
+
+**Lucio Amorim** — Lovable Ambassador
+[lucio.nxlv.ai](https://lucio.nxlv.ai)
+
 ## License
 
 [MIT](./LICENSE)
