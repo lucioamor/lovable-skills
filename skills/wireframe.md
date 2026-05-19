@@ -1,6 +1,8 @@
 ---
 name: wireframe
 description: Generate a dense, LLM-readable WIREFRAME.md from the actual codebase. Triggered by `/wireframe` (all routes) or `/wireframe /route` (single route).
+author: Lucio Amorim
+author_url: https://lucio.nxlv.ai
 ---
 
 # /wireframe — Codebase → Wireframe
