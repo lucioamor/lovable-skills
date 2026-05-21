@@ -1,10 +1,12 @@
-# Lovable Skills — by Lucio Amorim
+# Lovable Skills - by Lucio Amorim
 
-Reusable skills for [Lovable](https://lovable.dev). Drop them into any project's `.lovable/skills/` folder and use the commands in chat.
+Reusable skills for [Lovable](https://lovable.dev).
 
-## Installed skills
+This repository contains multiple Lovable skills. Each importable skill has its own folder with a `SKILL.md` file directly inside it.
 
-### `/wireframe` — Codebase → WIREFRAME.md
+## Skills
+
+### `/wireframe` - Codebase to WIREFRAME.md
 
 Reads the actual codebase (routes, components, exact copy, CTAs, layouts, and Supabase schema) and generates a dense, LLM-readable wireframe in markdown.
 
@@ -15,21 +17,34 @@ Reads the actual codebase (routes, components, exact copy, CTAs, layouts, and Su
 
 **Output:** writes to `WIREFRAME.md` at project root. If the file already exists, Lovable will ask whether to **overwrite** or save as a timestamped version (`WIREFRAME-YYYY-MM-DD_HH-MM.md`).
 
-See [`skills/wireframe.md`](./skills/wireframe.md) for the full spec.
+See [`skills/wireframe/SKILL.md`](./skills/wireframe/SKILL.md) for the full spec.
+
+### `/debate` - Expert panel
+
+Convenes specialists with opposing views to analyze UI, UX, copy, architecture, performance, or security decisions before implementation.
+
+See [`skills/debate/SKILL.md`](./skills/debate/SKILL.md) for the full spec.
 
 ## Installation
 
-1. Copy the skill file into your Lovable project:
+### Import from GitHub
 
-   ```
-   your-project/
-   └── .lovable/
-       ├── README.md          ← (optional) note that skills are installed
-       └── skills/
-           └── wireframe.md   ← copy this file
-   ```
+In Lovable, go to Settings -> Skills -> Add -> Import from GitHub and paste the folder URL for the skill you want.
 
-2. Use the command in Lovable's chat: type `/wireframe`
+```text
+https://github.com/<owner>/<repo>/tree/main/skills/wireframe
+https://github.com/<owner>/<repo>/tree/main/skills/debate
+```
+
+For repositories with multiple skills, Lovable expects the linked directory to contain `SKILL.md` directly.
+
+### Upload ZIP
+
+Zip one skill folder at a time so its `SKILL.md` is at the archive root or inside a single wrapping folder.
+
+## Usage
+
+Use the imported skill in Lovable's chat, for example `/wireframe` or `/debate`.
 
 ## Example output
 
