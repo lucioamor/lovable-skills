@@ -8,20 +8,20 @@ This repository keeps more than one skill. Each skill lives in its own folder un
 
 | Skill | What it does | Import |
 | --- | --- | --- |
-| `/wireframe` | Reads the current codebase and writes a dense `WIREFRAME.md` from real routes, components, copy, CTAs, layouts, and visible Supabase schema. | [Import folder](https://github.com/lucioamor/lovable-skills/tree/main/skills/wireframe) |
-| `/debate` | Runs an advisory expert panel with opposing views for product, UI, UX, copy, architecture, performance, data, or security decisions. | [Import folder](https://github.com/lucioamor/lovable-skills/tree/main/skills/debate) |
+| `/wireframe` | Reads the current codebase and writes a dense `WIREFRAME.md` from real routes, components, copy, CTAs, layouts, and visible Supabase schema. | [Import `SKILL.md`](https://github.com/lucioamor/lovable-skills/blob/main/skills/wireframe/SKILL.md) |
+| `/debate` | Runs an advisory expert panel with opposing views for product, UI, UX, copy, architecture, performance, data, or security decisions. | [Import `SKILL.md`](https://github.com/lucioamor/lovable-skills/blob/main/skills/debate/SKILL.md) |
 
 ## Import into Lovable
 
 1. Open `Settings -> Skills -> Add -> Import from GitHub`.
-2. Paste the GitHub folder URL for the skill you want:
+2. Paste the GitHub URL for the `SKILL.md` file you want:
 
 ```text
-https://github.com/lucioamor/lovable-skills/tree/main/skills/wireframe
-https://github.com/lucioamor/lovable-skills/tree/main/skills/debate
+https://github.com/lucioamor/lovable-skills/blob/main/skills/wireframe/SKILL.md
+https://github.com/lucioamor/lovable-skills/blob/main/skills/debate/SKILL.md
 ```
 
-Lovable imports one skill at a time. Because this repository contains multiple skills, use the folder URL for the chosen skill instead of the repository root.
+Lovable imports one skill at a time. Because this repository contains multiple skills, do not import the repository root. A direct `SKILL.md` URL tells Lovable to import that file's parent folder as the skill package.
 
 ## Skill details
 
@@ -51,7 +51,7 @@ skills/
     `-- SKILL.md
 ```
 
-That layout follows Lovable's multi-skill GitHub import shape: the linked skill directory must contain `SKILL.md` directly.
+That layout follows Lovable's multi-skill GitHub import shape: each imported skill folder contains `SKILL.md` directly.
 
 ## License
 
