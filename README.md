@@ -1,54 +1,57 @@
-# Lovable Skills - by Lucio Amorim
+# Lovable Skills
 
-Reusable skills for [Lovable](https://lovable.dev).
+Reusable skills by Lucio Amorim for [Lovable](https://lovable.dev).
 
-This repository contains multiple Lovable skills. Each importable skill has its own folder with a `SKILL.md` file directly inside it.
+This repository keeps more than one skill. Each skill lives in its own folder under `skills/`, with the `SKILL.md` file that Lovable imports directly inside that folder.
 
-## Skills
+## Available skills
 
-### `/wireframe` - Codebase to WIREFRAME.md
+| Skill | What it does | Import |
+| --- | --- | --- |
+| `/wireframe` | Reads the current codebase and writes a dense `WIREFRAME.md` from real routes, components, copy, CTAs, layouts, and visible Supabase schema. | [Import folder](https://github.com/lucioamor/lovable-skills/tree/main/skills/wireframe) |
+| `/debate` | Runs an advisory expert panel with opposing views for product, UI, UX, copy, architecture, performance, data, or security decisions. | [Import folder](https://github.com/lucioamor/lovable-skills/tree/main/skills/debate) |
 
-Reads the actual codebase (routes, components, exact copy, CTAs, layouts, and Supabase schema) and generates a dense, LLM-readable wireframe in markdown.
+## Import into Lovable
 
-**Usage:**
-
-- `/wireframe` — generate wireframe for **all** routes
-- `/wireframe /route` — generate wireframe for a **single** route (e.g. `/wireframe /dashboard`)
-
-**Output:** writes to `WIREFRAME.md` at project root. If the file already exists, Lovable will ask whether to **overwrite** or save as a timestamped version (`WIREFRAME-YYYY-MM-DD_HH-MM.md`).
-
-See [`skills/wireframe/SKILL.md`](./skills/wireframe/SKILL.md) for the full spec.
-
-### `/debate` - Expert panel
-
-Convenes specialists with opposing views to analyze UI, UX, copy, architecture, performance, or security decisions before implementation.
-
-See [`skills/debate/SKILL.md`](./skills/debate/SKILL.md) for the full spec.
-
-## Installation
-
-### Import from GitHub
-
-In Lovable, go to Settings -> Skills -> Add -> Import from GitHub and paste the folder URL for the skill you want.
+1. Open `Settings -> Skills -> Add -> Import from GitHub`.
+2. Paste the GitHub folder URL for the skill you want:
 
 ```text
-https://github.com/<owner>/<repo>/tree/main/skills/wireframe
-https://github.com/<owner>/<repo>/tree/main/skills/debate
+https://github.com/lucioamor/lovable-skills/tree/main/skills/wireframe
+https://github.com/lucioamor/lovable-skills/tree/main/skills/debate
 ```
 
-For repositories with multiple skills, Lovable expects the linked directory to contain `SKILL.md` directly.
+Lovable imports one skill at a time. Because this repository contains multiple skills, use the folder URL for the chosen skill instead of the repository root.
 
-### Upload ZIP
+## Skill details
 
-Zip one skill folder at a time so its `SKILL.md` is at the archive root or inside a single wrapping folder.
+### `/wireframe`
 
-## Usage
+Use `/wireframe` to generate a wireframe for all routes, or `/wireframe /route` to focus on one route such as `/dashboard`.
 
-Use the imported skill in Lovable's chat, for example `/wireframe` or `/debate`.
+The skill writes `WIREFRAME.md` at the project root. If that file already exists, it asks whether to overwrite it or save a timestamped version such as `WIREFRAME-YYYY-MM-DD_HH-MM.md`.
 
-## Example output
+Full instructions: [`skills/wireframe/SKILL.md`](./skills/wireframe/SKILL.md)
 
-See [`examples/WIREFRAME-nxlv.md`](./examples/WIREFRAME-nxlv.md) for a real-world example generated from the [NXLV.AI](https://be.nxlv.ai) codebase.
+Example output: [`examples/WIREFRAME-nxlv.md`](./examples/WIREFRAME-nxlv.md)
+
+### `/debate`
+
+Use `/debate` when you want a decision discussed before implementation. The skill casts specialists with real disagreement, produces the trade-offs, and ends with a decision matrix and a clear read.
+
+Full instructions: [`skills/debate/SKILL.md`](./skills/debate/SKILL.md)
+
+## Repository shape
+
+```text
+skills/
+|-- debate/
+|   `-- SKILL.md
+`-- wireframe/
+    `-- SKILL.md
+```
+
+That layout follows Lovable's multi-skill GitHub import shape: the linked skill directory must contain `SKILL.md` directly.
 
 ## License
 
