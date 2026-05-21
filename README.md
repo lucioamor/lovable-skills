@@ -2,26 +2,28 @@
 
 Reusable skills by Lucio Amorim for [Lovable](https://lovable.dev).
 
-This repository keeps more than one skill. Each skill lives in its own folder under `skills/`, with the `SKILL.md` file that Lovable imports directly inside that folder.
+This repository is the catalog and working source for Lucio Amorim's Lovable skills.
+
+For the easiest Lovable import, use the standalone GitHub repository for the skill you want. Each standalone repository has a single `SKILL.md` at its root.
 
 ## Available skills
 
 | Skill | What it does | Import |
 | --- | --- | --- |
-| `/wireframe` | Reads the current codebase and writes a dense `WIREFRAME.md` from real routes, components, copy, CTAs, layouts, and visible Supabase schema. | [Import `SKILL.md`](https://github.com/lucioamor/lovable-skills/blob/main/skills/wireframe/SKILL.md) |
-| `/debate` | Runs an advisory expert panel with opposing views for product, UI, UX, copy, architecture, performance, data, or security decisions. | [Import `SKILL.md`](https://github.com/lucioamor/lovable-skills/blob/main/skills/debate/SKILL.md) |
+| `/wireframe` | Reads the current codebase and writes a dense `WIREFRAME.md` from real routes, components, copy, CTAs, layouts, and visible Supabase schema. | [Import repo](https://github.com/lucioamor/lovable-skill-wireframe) |
+| `/debate` | Runs an advisory expert panel with opposing views for product, UI, UX, copy, architecture, performance, data, or security decisions. | [Import repo](https://github.com/lucioamor/lovable-skill-debate) |
 
 ## Import into Lovable
 
 1. Open `Settings -> Skills -> Add -> Import from GitHub`.
-2. Paste the GitHub URL for the `SKILL.md` file you want:
+2. Paste the standalone repository URL for the skill you want:
 
 ```text
-https://github.com/lucioamor/lovable-skills/blob/main/skills/wireframe/SKILL.md
-https://github.com/lucioamor/lovable-skills/blob/main/skills/debate/SKILL.md
+https://github.com/lucioamor/lovable-skill-wireframe
+https://github.com/lucioamor/lovable-skill-debate
 ```
 
-Lovable imports one skill at a time. Because this repository contains multiple skills, do not import the repository root. A direct `SKILL.md` URL tells Lovable to import that file's parent folder as the skill package.
+Lovable imports one skill at a time. Do not paste this catalog repository URL into the importer.
 
 ## Skill details
 
@@ -41,7 +43,15 @@ Use `/debate` when you want a decision discussed before implementation. The skil
 
 Full instructions: [`skills/debate/SKILL.md`](./skills/debate/SKILL.md)
 
-## Repository shape
+## Repositories
+
+| Repository | Purpose |
+| --- | --- |
+| [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) | Importable `/wireframe` skill with `SKILL.md` at the repository root. |
+| [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) | Importable `/debate` skill with `SKILL.md` at the repository root. |
+| [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills) | Central catalog and working source for the skills. |
+
+## Catalog shape
 
 ```text
 skills/
@@ -51,7 +61,7 @@ skills/
     `-- SKILL.md
 ```
 
-That layout follows Lovable's multi-skill GitHub import shape: each imported skill folder contains `SKILL.md` directly.
+The folders above keep the central source organized. The standalone repositories are the recommended import path because each one exposes a single root `SKILL.md`.
 
 ## License
 
