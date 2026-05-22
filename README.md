@@ -6,6 +6,8 @@ This repository is the catalog and working source for Lucio Amorim's Lovable ski
 
 For the easiest Lovable import, use the standalone GitHub repository for the skill you want. Each standalone repository has a single `SKILL.md` at its root.
 
+Each skill identifies its source repository and version inside its own instructions. When a skill runs, its response includes the installed version, tries to compare it with the repo version, and labels the status as current, update available, or unverified.
+
 ## Available skills
 
 | Skill | What it does | Import |
@@ -50,6 +52,17 @@ Full instructions: [`skills/debate/SKILL.md`](./skills/debate/SKILL.md)
 | [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) | Importable `/wireframe` skill with `SKILL.md` at the repository root. |
 | [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) | Importable `/debate` skill with `SKILL.md` at the repository root. |
 | [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills) | Central catalog and working source for the skills. |
+
+## Versions
+
+Current published versions:
+
+| Skill | Version | Latest source |
+| --- | --- | --- |
+| `/wireframe` | `v1.0.0` | [`lovable-skill-wireframe/VERSION.md`](https://github.com/lucioamor/lovable-skill-wireframe/blob/main/VERSION.md) |
+| `/debate` | `v1.0.0` | [`lovable-skill-debate/VERSION.md`](https://github.com/lucioamor/lovable-skill-debate/blob/main/VERSION.md) |
+
+If a running skill shows an older version than its standalone repo, import that repo again in Lovable to update it.
 
 ## Catalog shape
 

@@ -5,6 +5,18 @@ description: Use when the user types /debate or explicitly asks for a panel of s
 
 # /debate — Expert Panel
 
+## Skill identity
+
+- Version: `v1.0.0`
+- Source repo: `https://github.com/lucioamor/lovable-skill-debate`
+- Latest check: before the final user-facing response, compare this version with the current `VERSION.md` in the source repo when that source is reachable.
+
+At the end of every `/debate` response, add one compact line with the version status:
+
+> Skill: `/debate` `v1.0.0` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skill-debate`
+
+Use `current` only when the source repo version matches this installed version. Use `update available` when the source repo version differs. Use `unverified` when the source repo version cannot be checked.
+
 When the user invokes `/debate`, convene a small panel of expert archetypes who hold **opposing schools of thought**, and have them analyze the question. The friction between the experts *is the product* — a panel that agrees on everything has failed.
 
 This skill is **advisory**. It does not change code, schema, copy, or design. It produces the panel's analysis, a decision matrix, and (when warranted) a saved trace. Implementing the chosen direction is the user's next message.

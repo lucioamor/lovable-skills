@@ -5,6 +5,18 @@ description: Use when generating a dense, LLM-readable WIREFRAME.md from the act
 
 # /wireframe - Codebase to Wireframe
 
+## Skill identity
+
+- Version: `v1.0.0`
+- Source repo: `https://github.com/lucioamor/lovable-skill-wireframe`
+- Latest check: before the final user-facing response, compare this version with the current `VERSION.md` in the source repo when that source is reachable.
+
+After every `/wireframe` run, include one compact line in the user-facing result with the version status:
+
+> Skill: `/wireframe` `v1.0.0` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skill-wireframe`
+
+Use `current` only when the source repo version matches this installed version. Use `update available` when the source repo version differs. Use `unverified` when the source repo version cannot be checked.
+
 When the user types `/wireframe` or `/wireframe /some-route`, generate a markdown wireframe by reading the real codebase. Do not invent copy, do not use lorem ipsum, do not use placeholders.
 
 ## Command variants
