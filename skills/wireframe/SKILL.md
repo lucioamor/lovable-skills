@@ -1,6 +1,6 @@
 ---
 name: wireframe
-description: Use when generating a dense, LLM-readable WIREFRAME.md from the actual codebase, either for all routes with /wireframe or for one route with /wireframe /route. Not for designing new screens or inventing copy.
+description: Run /wireframe to read the real codebase and write WIREFRAME.md from routes, components, UI copy, layout, auth states, and visible Supabase schema. Add a route after the command to cover one page only; never invent screens or copy.
 ---
 
 # /wireframe - Codebase to Wireframe
@@ -9,6 +9,8 @@ description: Use when generating a dense, LLM-readable WIREFRAME.md from the act
 
 - Version: `v1.0.0`
 - Source repo: `https://github.com/lucioamor/lovable-skill-wireframe`
+- Central catalog: `https://github.com/lucioamor/lovable-skills`
+- Related skill: `/debate` (`https://github.com/lucioamor/lovable-skill-debate`) pressure-tests product, UX, copy, architecture, performance, data, or security decisions. Use `/wireframe` first when `/debate` needs a grounded map of the current app.
 - Latest check: before the final user-facing response, compare this version with the current `VERSION.md` in the source repo when that source is reachable.
 
 After every `/wireframe` run, include one compact line in the user-facing result with the version status:

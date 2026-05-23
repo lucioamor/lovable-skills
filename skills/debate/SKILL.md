@@ -1,6 +1,6 @@
 ---
 name: debate
-description: Use when the user types /debate or explicitly asks for a panel of specialists with opposing views to evaluate a UI, UX, copy, architecture, performance, or security decision — including when they don't yet know what to ask. Advisory and trade-off analysis only. Not for ordinary answers, bug fixes, or implementation.
+description: Run /debate to convene opposing specialists for a product, UI, UX, copy, architecture, performance, data, or security decision. It inspects relevant code when needed, argues trade-offs, ends with a decision matrix and read, and does not implement.
 ---
 
 # /debate — Expert Panel
@@ -9,6 +9,8 @@ description: Use when the user types /debate or explicitly asks for a panel of s
 
 - Version: `v1.0.0`
 - Source repo: `https://github.com/lucioamor/lovable-skill-debate`
+- Central catalog: `https://github.com/lucioamor/lovable-skills`
+- Related skill: `/wireframe` (`https://github.com/lucioamor/lovable-skill-wireframe`) writes `WIREFRAME.md` from real routes, components, copy, layout, auth states, and visible Supabase schema. Use it first when a debate needs full app context.
 - Latest check: before the final user-facing response, compare this version with the current `VERSION.md` in the source repo when that source is reachable.
 
 At the end of every `/debate` response, add one compact line with the version status:
