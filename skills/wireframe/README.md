@@ -1,60 +1,77 @@
 # /wireframe
 
-`/wireframe` reads a Lovable app's real codebase and writes a dense `WIREFRAME.md` file that another model, reviewer, or agent can understand without rendering the app.
+`/wireframe` turns a real Lovable app into a compact `WIREFRAME.md` file that another LLM, reviewer, teammate, or agent can understand without rendering the app.
 
-It is part of the central [`lovable-skills`](https://github.com/lucioamor/lovable-skills) catalog. The importable standalone repository is [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe).
+It is a community-built Lovable Skill by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
 
-## What it does
+Central catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)  
+Standalone import repo: [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe)
 
-`/wireframe` turns the app that already exists into plain-text product context:
+## Why this exists
+
+Most builders eventually need to move app context outside the original Lovable project.
+
+Screenshots are heavy and shallow. Raw HTML is noisy. Copying code into another model often gives too much implementation detail and too little product structure.
+
+`/wireframe` creates the missing abstraction layer: a plain-text map of what the app actually renders.
+
+That makes it easier to ask another model for UX critique, copy review, layout feedback, onboarding diagnosis, or product direction without wasting tokens on screenshots, markup, or vague explanations.
+
+## What it generates
+
+`/wireframe` reads the current Lovable codebase and writes a `WIREFRAME.md` file with:
 
 - route map
 - global chrome such as header, footer, navigation, dialogs, and modals
 - page-by-page ASCII layout
-- exact visible copy from JSX, locale files, or constants
-- buttons, links, CTAs, forms, and microcopy
+- visible copy from JSX, locale files, or constants
+- buttons, links, CTAs, forms, labels, and microcopy
 - auth, role, loading, empty, and error states when visible in code
 - component names and file paths
 - visible Supabase schema summary when present
 
-The output is designed for LLM handoff. It is not a screenshot, not raw HTML, and not a design mockup. It is compact markdown that can be pasted into another model or reviewed asynchronously.
+The output is designed for LLM handoff. It is not a screenshot, not raw HTML, and not a design mockup. It is dense markdown that travels well across ChatGPT, Claude, Gemini, Grok, agents, reviewers, and async critique workflows.
 
 ## When to use it
 
-Use `/wireframe` when you want a faithful textual snapshot of the current app:
+Use `/wireframe` when you need a faithful textual snapshot of the app that exists now.
+
+Good use cases:
 
 - getting a second opinion on UX or copy
-- asking another LLM to critique a page without sending screenshots
-- giving an agent context before a redesign
-- documenting what routes and screens actually exist
-- reducing tokens when moving app context between tools
-- preparing context for `/debate`
+- sending app context to another LLM without screenshots
+- giving an agent layout and route context before a redesign
+- documenting which routes and screens actually exist
+- reducing token cost when moving app context between tools
+- preparing structured context for `/debate`
+- creating a reviewable artifact before a product or design pass
 
-Example:
+## Commands
+
+Generate a full-app wireframe:
 
 ```text
 /wireframe
 ```
 
-Generates `WIREFRAME.md` for all routes registered in the app router.
-
-Example:
+Generate or update one route only:
 
 ```text
 /wireframe /dashboard
 ```
 
-Generates or updates the wireframe for only `/dashboard`, if that route exists.
+The route-specific command updates only the matching route section when possible.
 
-## Example flow
+## Recommended workflow
 
 1. Run `/wireframe`.
-2. Lovable reads the router, pages, imported components, global chrome, and visible schema.
+2. Lovable reads the router, page components, imported child components, global chrome, and visible schema.
 3. The skill writes `WIREFRAME.md`.
-4. You send that file to another LLM, teammate, or reviewer.
-5. You use the critique to decide what to change.
+4. Send that file to another LLM, reviewer, or agent.
+5. Use the critique to decide what should change.
+6. If the decision is non-obvious, run `/debate` against the wireframe.
 
-A common follow-up is:
+Example follow-up:
 
 ```text
 /debate based on WIREFRAME.md, why does the onboarding flow feel unclear?
@@ -66,12 +83,12 @@ A common follow-up is:
 
 - invent screens that are not in the router
 - write placeholder copy
-- design a new UI
-- judge whether the current UI is good
+- redesign the UI
+- judge whether the UI is good
 - implement changes
-- replace product specs or human design review
+- replace product specs, analytics, or human design review
 
-If something is dynamic, it marks the source instead of guessing the final value.
+If a value is dynamic, the skill marks the source instead of guessing the final rendered value.
 
 ## How it behaves
 
@@ -81,8 +98,30 @@ If `WIREFRAME.md` already exists, it asks whether to overwrite it or save a time
 
 Every run includes the installed skill version and checks whether the standalone source repo appears current.
 
-## Related skills
+## Import into Lovable
 
-- [`/debate`](../debate/README.md) runs a structured panel of opposing experts for product, UX, copy, architecture, performance, data, or security decisions.
+Open:
 
-Use `/wireframe` first when the debate needs a grounded map of the current app.
+```text
+Settings -> Skills -> Add -> Import from GitHub
+```
+
+Then paste:
+
+```text
+https://github.com/lucioamor/lovable-skill-wireframe
+```
+
+Lovable imports one skill at a time. For the full catalog, see [`lovable-skills`](https://github.com/lucioamor/lovable-skills).
+
+## Related skill
+
+[`/debate`](https://github.com/lucioamor/lovable-skill-debate) runs a structured panel of opposing experts for product, UX, copy, architecture, performance, data, and security decisions.
+
+Use `/wireframe` first when the debate needs a grounded map of routes, copy, layout, and component structure.
+
+## Author
+
+Created and maintained by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+
+This is a community-built skill intended to make Lovable workflows more structured, portable, and reviewable.

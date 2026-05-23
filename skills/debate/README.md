@@ -2,16 +2,29 @@
 
 `/debate` runs a structured expert panel with opposing schools of thought, then ends with a decision matrix and a clear read.
 
-It is part of the central [`lovable-skills`](https://github.com/lucioamor/lovable-skills) catalog. The importable standalone repository is [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate).
+It is a community-built Lovable Skill by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+
+Central catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)  
+Standalone import repo: [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate)
+
+## Why this exists
+
+Builders usually make bad decisions in two moments:
+
+1. when they do not know what direction to take
+2. when they are too confident they already do
+
+`/debate` is built for both.
+
+It turns uncertainty into structured disagreement. Instead of asking one model for one confident answer, it casts experts with conflicting priors and forces the trade-offs into the open.
+
+The point is not theater. The point is to make premature consensus harder.
 
 ## What it does
 
-`/debate` is for moments where builders make bad calls:
+`/debate` creates a small panel of specialists who should disagree.
 
-- when they do not know what direction to take
-- when they are too confident they already do
-
-The skill casts specialists who should disagree. For example:
+Depending on the problem, the panel may include perspectives such as:
 
 - conservative vs. experimental
 - minimalist vs. trend-sensitive
@@ -19,12 +32,16 @@ The skill casts specialists who should disagree. For example:
 - pragmatic architecture vs. clean-boundary architecture
 - profiler-first performance vs. payload minimization
 - trust-led copy vs. conversion-led copy
+- growth-oriented onboarding vs. user-protection onboarding
+- implementation speed vs. long-term maintainability
 
-The disagreement is the point. A panel that agrees too quickly has failed.
+A panel that agrees too quickly has failed. The skill is designed to expose the strongest version of each serious option before recommending what to do next.
 
 ## When to use it
 
-Use `/debate` when you want to pressure-test a decision before implementation:
+Use `/debate` when a decision is important enough to pressure-test before implementation.
+
+Good use cases:
 
 - UX direction when something feels off
 - copy when every version sounds equally fine
@@ -34,77 +51,104 @@ Use `/debate` when you want to pressure-test a decision before implementation:
 - pricing or GTM positioning
 - security, auth, and data access decisions
 - performance trade-offs
+- product scope decisions
+- positioning choices where taste may be masking strategy
 
-Example:
+## Examples
 
 ```text
 /debate the pricing page feels generic and I don't know why
 ```
 
-Example:
-
 ```text
 /debate is it okay to keep this auth check on the client?
 ```
-
-Example:
 
 ```text
 /debate should onboarding be shorter, or should we add one more qualifying step?
 ```
 
-## Example flow
+```text
+/debate based on WIREFRAME.md, where is the dashboard losing clarity?
+```
 
-1. You invoke `/debate` with a question or rough concern.
-2. The skill infers the domain and desired posture.
-3. It casts a small panel of opposing experts.
+## Recommended workflow
+
+1. Invoke `/debate` with a question, concern, or decision.
+2. The skill infers the domain and the right posture.
+3. It casts a panel of opposing experts.
 4. If the question depends on existing code, it reads the relevant files first.
 5. The experts argue the trade-offs.
 6. The response ends with a decision matrix and "the read".
 7. For architecture, security, data, or high-impact product decisions, it may save a trace file.
 
+For product or UX decisions based on an existing app, run `/wireframe` first and debate from the generated `WIREFRAME.md`.
+
 ## Output shape
 
 Every serious debate ends with:
 
-- the strongest options still standing
+- strongest options still standing
 - what each option wins
 - what each option loses
 - risk
 - effort
 - best-fit scenario
-- a short read explaining the real trade-off
+- the read: a short explanation of the real trade-off
 
-The goal is not expert theater. The goal is a decision you can act on.
+The result should be actionable. You should leave knowing what to do, what to avoid, and what assumption matters most.
+
+## How it behaves by domain
+
+The skill changes posture depending on the type of problem.
+
+For architecture, security, data, stack, and integrations, it converges on the safest defensible path.
+
+For performance, it converges around what measurement would likely show and what should be tested first.
+
+For UI, copy, branding, and positioning, it preserves divergent strong directions instead of pretending there is one objective answer.
+
+For UX, it diverges on product vision but converges on accessibility, user protection, and clarity constraints.
+
+When the question mentions an existing screen, flow, schema, or implementation, the skill inspects relevant files before judging. If it cannot find them, it says so and continues as a conceptual review.
 
 ## What it does not do
 
 `/debate` does not:
 
 - implement code
-- rewrite copy directly unless the debate calls for example wording
+- rewrite copy directly unless example wording is needed
 - force consensus on subjective design questions
-- make risky architecture or security calls look like taste
+- treat architecture or security as taste
 - replace measurement for performance issues
 - keep asking clarifying questions until the user does the framing work
 
 If the prompt is vague, it asks at most once and then proceeds with its best diagnosis.
 
-## How it behaves
+## Import into Lovable
 
-The skill changes posture by domain:
+Open:
 
-- architecture, security, data, stack, integrations: converge on the safest defensible path
-- performance: converge around what measurement would likely show
-- UI, copy, branding, positioning: preserve divergent strong directions
-- UX: diverge on vision, converge on accessibility and user-protection constraints
+```text
+Settings -> Skills -> Add -> Import from GitHub
+```
 
-When the question mentions an existing screen, flow, schema, or implementation, the skill inspects relevant files before judging. If it cannot find them, it says so and continues as a conceptual review.
+Then paste:
 
-Every run includes the installed skill version and checks whether the standalone source repo appears current.
+```text
+https://github.com/lucioamor/lovable-skill-debate
+```
 
-## Related skills
+Lovable imports one skill at a time. For the full catalog, see [`lovable-skills`](https://github.com/lucioamor/lovable-skills).
 
-- [`/wireframe`](../wireframe/README.md) generates a plain-text `WIREFRAME.md` from the real app.
+## Related skill
+
+[`/wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) generates a plain-text `WIREFRAME.md` from the real app.
 
 Use `/wireframe` first when `/debate` needs a complete map of routes, copy, layout, and component structure.
+
+## Author
+
+Created and maintained by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+
+This is a community-built skill for better product judgment, stronger implementation decisions, and fewer accidental consensus traps inside Lovable projects.
