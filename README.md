@@ -1,6 +1,4 @@
-# Lovable Skills
-
-Reusable Lovable Skills by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+# Lucio's Lovable Skills
 
 This repository is the central catalog and working source for skills I use to make Lovable projects easier to inspect, critique, and improve across LLMs, agents, reviewers, and product workflows.
 
