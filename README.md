@@ -67,7 +67,7 @@ https://github.com/lucioamor/lovable-skill-debate
 
 Lovable imports one skill at a time.
 
-Do not paste this catalog repository URL into the importer. Use the standalone repositories above.
+Or you can just paste this catalog repository URL into the chat (might eat a couple credits though).
 
 ## Skill details
 
