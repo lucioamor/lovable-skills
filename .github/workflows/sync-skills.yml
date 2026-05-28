@@ -24,10 +24,10 @@ jobs:
           REPO=lucioamor/lovable-skill-${SKILL}
           DEST=/tmp/${SKILL}
 
-          # Wire all github.com traffic through the PAT so push inherits auth
-          git config --global url."https://x-access-token:${GH_PAT}@github.com/".insteadOf "https://github.com/"
-
           git clone https://github.com/${REPO}.git ${DEST}
+
+          # Set authenticated remote so push works
+          git -C ${DEST} remote set-url origin https://x-access-token:${GH_PAT}@github.com/${REPO}.git
 
           cp skills/${SKILL}/SKILL.md   ${DEST}/SKILL.md
           cp skills/${SKILL}/VERSION.md ${DEST}/VERSION.md
