@@ -11,3 +11,6 @@ Desktop.ini
 
 # Dropbox conflicts
 *conflicted copy*
+
+# Local drafts and backups
+.backup/
