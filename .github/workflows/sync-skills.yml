@@ -1,0 +1,43 @@
+name: Sync skills to standalone repos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - 'LICENSE'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        skill: [wireframe, debate]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync ${{ matrix.skill }} to standalone repo
+        env:
+          GH_PAT: ${{ secrets.SKILL_SYNC_PAT }}
+        run: |
+          SKILL=${{ matrix.skill }}
+          REPO=lucioamor/lovable-skill-${SKILL}
+          DEST=/tmp/${SKILL}
+
+          git clone https://x-access-token:${GH_PAT}@github.com/${REPO}.git ${DEST}
+
+          cp skills/${SKILL}/SKILL.md   ${DEST}/SKILL.md
+          cp skills/${SKILL}/VERSION.md ${DEST}/VERSION.md
+          cp skills/${SKILL}/README.md  ${DEST}/README.md
+          cp LICENSE                    ${DEST}/LICENSE
+
+          cd ${DEST}
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+          git diff --cached --quiet && echo "No changes, skipping push." && exit 0
+
+          SOURCE_SHA=$(git -C $GITHUB_WORKSPACE rev-parse --short HEAD)
+          git commit -m "sync: from lovable-skills@${SOURCE_SHA}"
+          git push
