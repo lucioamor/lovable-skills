@@ -1,13 +1,13 @@
 ---
 name: wireframe
-description: Run /wireframe to read the real codebase and write WIREFRAME.md from routes, components, UI copy, layout, auth states, and visible Supabase schema. Add a route after the command to cover one page only; never invent screens or copy.
+description: Run /wireframe to map the active page (or root if unknown) with every real title, button, and section label in screen order. Add a page name to pick a specific page. Add "all" to map the whole app. Never invent copy.
 ---
 
-# /wireframe - Codebase to Wireframe
+# /wireframe - App to Wireframe
 
 ## Skill identity
 
-- Version: `v1.0.0`
+- Version: `v1.1.0`
 - Source repo: `https://github.com/lucioamor/lovable-skill-wireframe`
 - Central catalog: `https://github.com/lucioamor/lovable-skills`
 - Related skill: `/debate` (`https://github.com/lucioamor/lovable-skill-debate`) pressure-tests product, UX, copy, architecture, performance, data, or security decisions. Use `/wireframe` first when `/debate` needs a grounded map of the current app.
@@ -15,42 +15,58 @@ description: Run /wireframe to read the real codebase and write WIREFRAME.md fro
 
 After every `/wireframe` run, include one compact line in the user-facing result with the version status:
 
-> Skill: `/wireframe` `v1.0.0` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skill-wireframe`
+> Skill: `/wireframe` `v1.1.0` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skill-wireframe`
 
 Use `current` only when the source repo version matches this installed version. Use `update available` when the source repo version differs. Use `unverified` when the source repo version cannot be checked.
 
-When the user types `/wireframe` or `/wireframe /some-route`, generate a markdown wireframe by reading the real codebase. Do not invent copy, do not use lorem ipsum, do not use placeholders.
-
 ## Command variants
 
-- `/wireframe` -> generate wireframe for **ALL** routes registered in the app router (e.g. `src/App.tsx`).
-- `/wireframe /route` -> generate wireframe **only** for the matching route (e.g. `/wireframe /dashboard` -> only `/dashboard`).
+- `/wireframe` → wireframe the **active page**. If the active page cannot be determined, fall back to the **root page** (`/`).
+- `/wireframe [page]` → wireframe the named page only (e.g. `/wireframe dashboard`).
+- `/wireframe all` → wireframe **every page** in the app into a single file. Only do this when the user explicitly requests it.
 
-If the requested route does not exist in the router, stop and tell the user which routes are available.
+If the requested page does not exist in the app, stop and tell the user which pages are available.
 
 ## Workflow
 
-1. **Locate the router** (typically `src/App.tsx` or wherever `<Routes>` lives). Build the route map.
-2. **Read each page component** referenced by the route, then follow imports into its section/child components. Read enough to extract:
-   - Exact headings, subheadings, body text, button labels, link labels, microcopy.
-   - Section order as rendered top-to-bottom (mirror JSX order).
-   - Conditional rendering (auth gates, role gates, loading/empty/error states).
-   - File path of each named component for reference.
-3. **Read global chrome once** (Header, Footer, global Nav, global Modals/Dialogs). Document them in their own section, not per page.
-4. **If a Supabase schema is present** (e.g. `src/integrations/supabase/types.ts` or `supabase/migrations/*`), include a compact data model summary: table name, key columns, RLS posture if visible.
-5. **Compose the markdown** following the Output Format below.
-6. **Write the file** following the File Output Logic below.
+1. **Locate the page list** (typically `src/App.tsx` or wherever the app's pages are registered). Identify the target page(s) based on the command variant above.
+2. **Read each target page completely** — follow every import into its child components, and follow those into their own imports. Read all the way down. The goal is **every single word of real user-facing text**:
+   - Every title, heading, subheading, section label, body paragraph, caption, tooltip, placeholder, button label, link label, and tab name.
+   - Layout order top-to-bottom as it appears on screen (mirror JSX render order, not import order).
+   - Interactive elements (filters, dropdowns, date pickers, tabs, toggles): capture what label or value they show by default, and note in plain words what they control.
+3. **Read the top bar and bottom bar once** (Header, Footer, global Navigation). Document them in their own section, not per page.
+4. **Compose the markdown** following the Output Format below.
+5. **Write the file** following the File Output Logic below.
 
 ## File Output Logic
 
-- Target path: `WIREFRAME.md` at project root.
-- If `WIREFRAME.md` does **not** exist -> create it.
-- If `WIREFRAME.md` **does** exist -> ask the user, verbatim:
-  > WIREFRAME.md ja existe. Deseja fazer **overwrite** ou salvar como nova versao (**WIREFRAME-YYYY-MM-DD_HH-MM.md**)?
+**Determine the target filename first:**
+
+- Single page (default or named): `WIREFRAME-{page-slug}.md` at project root (e.g. `WIREFRAME-dashboard.md`, `WIREFRAME-home.md`).
+- All pages (`/wireframe all`): `WIREFRAME.md` at project root.
+
+**Then check if the file exists:**
+
+- If it does **not** exist → create it.
+- If it **does** exist → ask the user, verbatim:
+  > `{filename}` already exists. Do you want to **overwrite** it or save a new version (`{filename-b}`, `{filename-c}`, …)?
+
+  Use a single letter suffix (b, c, d, …) for the new version name, incrementing past any suffixed files that already exist.
+
   Then act on their answer:
-  - "overwrite" -> overwrite `WIREFRAME.md`.
-  - "nova versao" / "new version" -> write to `WIREFRAME-YYYY-MM-DD_HH-MM.md` using the current local date/time (24h).
-- For single-route mode (`/wireframe /route`) on an existing `WIREFRAME.md`, still ask. If user picks overwrite, replace only that route's section and preserve the rest; if new version, write a fresh file containing just that route plus global chrome.
+  - "overwrite" → overwrite the existing file.
+  - "new version" → write to the next available lettered filename.
+
+## Large Data Handling
+
+When a section displays a large dataset — a table with many rows, many columns, or a very long list — do **not** try to reproduce it all in markdown. Instead:
+
+1. Show an **abbreviated version**: column headers plus 3–5 representative rows.
+2. Include a callout immediately after:
+
+   > **Large dataset.** For a complete review, export it as `.csv` or `.json` from the app or database.
+
+Apply the same rule to long text blocks (e.g. a terms page, a long article): show the opening paragraph and note the rest should be reviewed in its native format.
 
 ## Output Format
 
@@ -59,67 +75,69 @@ If the requested route does not exist in the router, stop and tell the user whic
 
 > Generated from codebase on {YYYY-MM-DD}. Reflects current code.
 
-## 0. Route Map
+## 0. Page Map
 
-| Route | Page Component | Auth | Notes |
-|-------|----------------|------|-------|
-| `/`   | `Index` (`src/pages/Index.tsx`) | Public | ... |
+| Page | Notes |
+|------|-------|
+| `/`  | Home page |
 
-## 1. Global Chrome
+## 1. Top Bar & Bottom Bar
 
-### Header - `<Header>` (`src/components/Header.tsx`)
-ASCII box + exact links/labels.
+### Top Bar
+```
++--------------------------------------------------+
+| Logo  [Nav link]  [Nav link]  [Nav link]  [CTA]  |
++--------------------------------------------------+
+```
 
-### Footer - `<Footer>` (`...`)
-ASCII box + exact copy.
-
-### Global Modals (e.g. ContactDialog, AuthModal)
-Trigger sources + exact field labels + submit destination.
+### Bottom Bar
+```
++--------------------------------------------------+
+| © Copy  [Link]  [Link]  [Link]                   |
++--------------------------------------------------+
+```
 
 ## 2. Pages
 
-### 2.1 `/` - Index
-ASCII layout box mirroring top-to-bottom section order:
+### 2.1 Home (`/`)
 
 ```
 +----------------------------------+
 | HERO                             |
-|   H1: "<exact copy>"             |
-|   Sub: "<exact copy>"            |
-|   [Button: <exact label>]        |
+|   H1: "Exact title text here"    |
+|   "Exact subtitle text here"     |
+|   [Button: Exact label]          |
 +----------------------------------+
-| SECTION 2 ...                    |
+| SECTION: "Exact section title"   |
+|   "Exact body text here"         |
+|   [Button: Exact label]          |
++----------------------------------+
+| SECTION: "Exact section title"   |
+|   Item: "Exact item label"       |
+|   Item: "Exact item label"       |
+|   Item: "Exact item label"       |
 +----------------------------------+
 ```
 
-For each section list:
-- Component name + file path
-- Exact heading / body / button copy
-- Conditional/auth states ("Signed-out: ..., Signed-in: ...")
+#### Interactive elements
 
-(repeat per route)
+| Element | Default shown | What it controls |
+|---------|--------------|-----------------|
+| Status filter | "All" | Filters the rows in the table below |
+| Date range | "This month" | Narrows results to selected period |
 
-## 3. Data Model (if Supabase present)
-
-| Table | Key Columns | RLS |
-|-------|-------------|-----|
-| ...   | ...         | ... |
-
-## 4. Cross-Cutting Rules
-
-- i18n, auth, roles, animation, routing patterns observed in code.
+(repeat per page)
 ````
 
 ## Format Rules (must follow)
 
-- **Real copy only.** Pull strings directly from JSX, i18n locale files, or constants. Never paraphrase user-facing text.
-- **ASCII boxes reflect true visual order** (top-to-bottom as rendered, not import order).
-- **Dense but scannable.** Tables for route maps and data models; ASCII boxes + bullet lists for sections.
-- **Name every component** with its file path so a future LLM can jump straight to the source.
-- **No placeholders, no "TBD", no lorem ipsum.** If a string is dynamic, mark it `{dynamic: <source>}`.
-- **i18n projects:** prefer the EN locale unless the project is single-language PT-BR; note the other language exists.
-- **Skip dev-only routes** (Storybook, test harnesses) unless the user asked for them.
+- **Every word of real text.** Pull all visible strings directly from JSX, locale files, or constants. Never paraphrase, summarize, or omit. If a string is pulled from a database or API at runtime, write `{dynamic}` in its place — do not guess.
+- **ASCII boxes reflect true visual order** top-to-bottom as rendered on screen.
+- **Interactive elements** (filters, tabs, dropdowns, toggles, date pickers): always include the table above the section they affect. Show the default displayed value and describe in plain words what changes when the user interacts.
+- **Large datasets get abbreviated output plus a format recommendation** (see Large Data Handling above).
+- **No placeholders, no "TBD", no lorem ipsum.**
+- **Skip dev-only pages** (Storybook, test harnesses) unless the user asked for them.
 
 ## After Writing
 
-Tell the user: file path written, route count covered, and (if applicable) which sections were skipped and why.
+Tell the user: file path written, page count covered, and (if applicable) which sections were abbreviated and why.

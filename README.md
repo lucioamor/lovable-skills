@@ -1,40 +1,48 @@
 # Lucio's Lovable Skills
 
-This repository is the central catalog and working source for skills I use to make Lovable projects easier to inspect, critique, and improve across LLMs, agents, reviewers, and product workflows.
+A collection of reusable Lovable Skills by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
 
-For the easiest Lovable import, use the standalone GitHub repository for the specific skill you want. Each standalone repository exposes a single `SKILL.md` at its root.
+These are skills I built and use to make Lovable projects easier to review, understand, and improve — whether you are working alone, with a team, or with other AI tools.
 
-## Why this repo exists
+## What is a Skill?
 
-Lovable Skills turn repeated prompts into reusable canonical instructions.
+A Skill is a saved set of instructions that Lovable can follow on command. Think of it like teaching Lovable a new trick: instead of typing the same long prompt every time, you just type the skill name and it knows exactly what to do.
 
-Project Knowledge is for facts a project should remember. Skills are for processes a project should run in a consistent way.
-
-That distinction matters. As Lovable projects become more complex, the bottleneck is often not whether the app can be built. The bottleneck is whether builders can create a repeatable workflow for review, critique, context transfer, and decision-making.
-
-This repo packages two of those workflows:
-
-- `/wireframe` compresses the real app surface into portable product context.
-- `/debate` pressure-tests important product, UX, copy, and technical decisions before implementation.
-
-Together, they create a simple loop:
-
-```text
-extract the app -> critique the decision -> implement with clearer judgment
-```
+Skills are different from Project Knowledge. Project Knowledge stores facts your app should remember. Skills store processes your app should run consistently.
 
 ## Available skills
 
-| Skill | What it does | Import |
-| --- | --- | --- |
-| `/wireframe` | Reads the current Lovable codebase and writes a dense `WIREFRAME.md` from real routes, components, copy, CTAs, layouts, states, and visible Supabase schema. | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
-| `/debate` | Runs a structured expert panel with opposing viewpoints for product, UI, UX, copy, architecture, performance, data, security, and GTM decisions. | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
+| Skill | What it does |
+| --- | --- |
+| `/wireframe` | Reads your entire app and writes a plain-text document with every page's real layout, text, buttons, filters, and interactive elements. Great for sharing context with other AI tools or reviewers. |
+| `/debate` | Brings in a panel of opposing specialists to pressure-test a decision before you build it — covering product, design, copy, technical, and data angles. |
+
+All skills are available at: [lucioamor/lovable-skills](https://github.com/lucioamor/lovable-skills)
+
+## How to add a skill to Lovable
+
+Open Lovable and go to:
+
+```text
+Settings → Skills → Add → Import from GitHub
+```
+
+Paste the link for the skill you want:
+
+```text
+https://github.com/lucioamor/lovable-skill-wireframe
+https://github.com/lucioamor/lovable-skill-debate
+```
+
+Lovable imports one skill at a time. You can add both.
+
+Do not paste this catalog page URL. Use the individual skill links above.
 
 ## Recommended workflow
 
-Use `/wireframe` when you need a grounded map of what the app currently is.
+Run `/wireframe` first to get a clear picture of what your app currently looks like.
 
-Then use `/debate` when the next decision is not obvious, or when the obvious decision may be hiding a blind spot.
+Then run `/debate` when the next decision is not obvious, or when you want to find blind spots before committing.
 
 Example:
 
@@ -45,51 +53,38 @@ Example:
 Then:
 
 ```text
-/debate based on WIREFRAME.md, why does the onboarding flow feel unclear?
+/debate based on WIREFRAME.md, why does the sign-up flow feel confusing?
 ```
 
-This is especially useful when moving between Lovable and external LLMs such as ChatGPT, Claude, Gemini, or Grok, or when handing context to an async reviewer, agent, teammate, or client.
-
-## Import into Lovable
-
-Open:
-
-```text
-Settings -> Skills -> Add -> Import from GitHub
-```
-
-Paste the standalone repository URL for the skill you want:
-
-```text
-https://github.com/lucioamor/lovable-skill-wireframe
-https://github.com/lucioamor/lovable-skill-debate
-```
-
-Lovable imports one skill at a time.
-
-Or you can just paste this catalog repository URL into the chat (might eat a couple credits though).
+This works especially well when switching between Lovable and external AI tools like ChatGPT, Claude, Gemini, or Grok — or when sharing context with a reviewer, client, or teammate.
 
 ## Skill details
 
 ### `/wireframe`
 
-`/wireframe` generates a `WIREFRAME.md` file from the current app.
-
-Use it for all routes:
+Maps the active page (or home page if unknown):
 
 ```text
 /wireframe
 ```
 
-Use it for one route:
+Maps one specific page:
 
 ```text
-/wireframe /dashboard
+/wireframe dashboard
 ```
 
-It reads real routes, page components, imported components, visible UI copy, auth states, loading states, empty states, error states, and visible Supabase schema. It then compresses the app into plain markdown that can be shared across LLMs and review workflows.
+Maps every page in the app into a single file:
 
-It does not design new screens, invent missing copy, judge the UI, or infer pages that are not present in the router.
+```text
+/wireframe all
+```
+
+`/wireframe` reads the active page and writes a `WIREFRAME-{page}.md` file with every word of visible text, every button, every link, and every interactive element like filters and dropdowns. Use `/wireframe all` to map the full app into a single `WIREFRAME.md`.
+
+When a page has very large tables or long blocks of text, the skill creates an abbreviated version and tells you the best format for reviewing the full data.
+
+It does not design new screens, write placeholder text, judge the design, or make any changes to the app.
 
 Full instructions: [`skills/wireframe/SKILL.md`](./skills/wireframe/SKILL.md)  
 Skill README: [`skills/wireframe/README.md`](./skills/wireframe/README.md)  
@@ -97,17 +92,17 @@ Example output: [`examples/WIREFRAME-nxlv.md`](./examples/WIREFRAME-nxlv.md)
 
 ### `/debate`
 
-`/debate` pressure-tests a decision before implementation.
+```text
+/debate [topic or question]
+```
 
-Use it when you are stuck and do not know what to ask. Also use it when you are already confident and want the blind spots surfaced before committing.
+`/debate` pressure-tests a decision before you build it. It convenes specialists who argue opposing sides across different domains:
 
-The skill changes posture by domain:
+- convergent (one right answer matters) for technical architecture, security, data, and performance
+- divergent (creative tension is useful) for design, copy, branding, and positioning
+- mixed for user experience, where vision may differ but clarity and user protection still matter
 
-- convergent for architecture, security, data, integrations, and performance
-- divergent for UI, copy, branding, and positioning
-- mixed for UX, where vision may diverge but clarity and user-protection constraints still matter
-
-It does not implement the decision. It ends at analysis, trade-offs, decision matrix, the read, and sometimes a saved trace.
+It does not implement anything. It ends with trade-offs, a decision matrix, and a recommendation.
 
 Full instructions: [`skills/debate/SKILL.md`](./skills/debate/SKILL.md)  
 Skill README: [`skills/debate/README.md`](./skills/debate/README.md)
@@ -116,49 +111,102 @@ Skill README: [`skills/debate/README.md`](./skills/debate/README.md)
 
 | Repository | Purpose |
 | --- | --- |
-| [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) | Importable `/wireframe` skill with `SKILL.md` at the repository root. |
-| [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) | Importable `/debate` skill with `SKILL.md` at the repository root. |
-| [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills) | Central catalog and working source for all skills. |
+| [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills) | Central home for all skills. Start here. |
+| [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) | Import-ready `/wireframe` skill. |
+| [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) | Import-ready `/debate` skill. |
 
 ## Versioning
 
-Each skill identifies its source repository and version inside its own instructions.
+Each skill tracks its own version. When you run a skill, it tells you the installed version and checks whether an update is available in its source repository.
 
-When a skill runs, its response includes the installed version, tries to compare it with the standalone repo version, and labels the status as:
+Version status will show as:
 
-- current
-- update available
-- unverified
+- **current** — you have the latest version
+- **update available** — a newer version exists; re-import the skill to update
+- **unverified** — the check could not reach the source
 
 Current published versions:
 
-| Skill | Version | Latest source |
+| Skill | Version | Check for updates |
 | --- | --- | --- |
-| `/wireframe` | `v1.0.0` | [`lovable-skill-wireframe/VERSION.md`](https://github.com/lucioamor/lovable-skill-wireframe/blob/main/VERSION.md) |
-| `/debate` | `v1.0.0` | [`lovable-skill-debate/VERSION.md`](https://github.com/lucioamor/lovable-skill-debate/blob/main/VERSION.md) |
+| `/wireframe` | `v1.1.0` | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
+| `/debate` | `v1.0.0` | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
 
-If a running skill shows an older version than its standalone repo, import that standalone repo again in Lovable to update it.
+If a skill shows an older version, re-import its repository in Lovable to update it.
 
-## Catalog shape
-
-```text
-skills/
-|-- debate/
-|   |-- README.md
-|   `-- SKILL.md
-`-- wireframe/
-    |-- README.md
-    `-- SKILL.md
-```
-
-The folders above keep the central source organized. The standalone repositories are the recommended import path because each one exposes a single root `SKILL.md`.
+Maintainer workflow: [`MAINTENANCE.md`](./MAINTENANCE.md)
 
 ## About the author
 
 Created and maintained by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
 
-I share these skills as practical infrastructure for builders who use Lovable seriously: not just to generate apps, but to review them, move context across tools, pressure-test decisions, and make better product calls faster.
+These skills are practical infrastructure for builders who use Lovable seriously: not just to generate apps, but to review them, move context between tools, pressure-test decisions, and make better product choices faster.
 
 ## License
 
 [MIT](./LICENSE)
+
+---
+
+## How these skills are built (technical reference)
+
+This section is for developers, contributors, or curious readers who want to understand how the skill system works under the hood.
+
+### What a Skill is, technically
+
+A Lovable Skill is a Markdown file (`SKILL.md`) with a YAML frontmatter block at the top and a set of instructions written in plain English below it. Lovable reads the frontmatter to register the skill's name and a short description, and reads the instructions to know how to behave when the skill is triggered.
+
+Example frontmatter:
+
+```yaml
+---
+name: wireframe
+description: Run /wireframe to read your app and write WIREFRAME.md...
+---
+```
+
+The instructions below the frontmatter are written so that an AI can follow them reliably: they define the trigger, the workflow steps, the output format, and any edge-case rules.
+
+### Repository structure
+
+This catalog repository stores the authoritative source for each skill:
+
+```text
+lovable-skills/
+├── skills/
+│   ├── wireframe/
+│   │   ├── SKILL.md       ← authoritative skill instructions
+│   │   ├── README.md      ← user-facing documentation
+│   │   └── VERSION.md     ← current version
+│   └── debate/
+│       ├── SKILL.md
+│       ├── README.md
+│       └── VERSION.md
+├── examples/              ← sample output files
+├── MAINTENANCE.md         ← maintainer workflow
+└── SKILL_METADATA.md      ← description contract
+```
+
+### Standalone import repositories
+
+Lovable's import tool requires a GitHub repository with a `SKILL.md` at the root. Because of this, each skill also lives in its own standalone repository:
+
+- [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe)
+- [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate)
+
+These standalone repositories are export targets, not editing targets. The canonical source lives in `skills/<skill-name>/SKILL.md` in this catalog. When a skill is updated here, the corresponding standalone repository should be synced.
+
+The export contract is documented in [`MAINTENANCE.md`](./MAINTENANCE.md).
+
+### Versioning convention
+
+Each skill follows simple semantic versioning (`v1.0.0`). The version is stored in `VERSION.md` inside the skill folder and referenced inside `SKILL.md`. When a skill runs, it compares its installed version against the standalone repository's `VERSION.md` to report whether an update is available.
+
+### How to add a new skill
+
+1. Create `skills/<new-skill>/SKILL.md` with valid frontmatter and instructions.
+2. Create `skills/<new-skill>/VERSION.md` starting at `v1.0.0`.
+3. Create `skills/<new-skill>/README.md` for user-facing documentation.
+4. Update `README.md` (this file) and `SKILL_METADATA.md`.
+5. Create a new standalone import repository and sync the files there.
+6. Add the new repository link to the Repositories table above.

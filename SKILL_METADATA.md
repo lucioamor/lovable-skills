@@ -15,5 +15,5 @@ The `SKILL.md` frontmatter remains the source of truth; keep this record in sync
 
 | Skill | Description |
 | --- | --- |
-| `/wireframe` | Run /wireframe to read the real codebase and write WIREFRAME.md from routes, components, UI copy, layout, auth states, and visible Supabase schema. Add a route after the command to cover one page only; never invent screens or copy. |
+| `/wireframe` | Run /wireframe to map the active page (or root if unknown) with every real title, button, and section label in screen order. Add a page name to pick a specific page. Add "all" to map the whole app. Never invent copy. |
 | `/debate` | Run /debate to convene opposing specialists for a product, UI, UX, copy, architecture, performance, data, or security decision. It inspects relevant code when needed, argues trade-offs, ends with a decision matrix and read, and does not implement. |
