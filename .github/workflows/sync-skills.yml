@@ -27,7 +27,7 @@ jobs:
           git clone https://github.com/${REPO}.git ${DEST}
 
           # Set authenticated remote so push works
-          git -C ${DEST} remote set-url origin https://x-access-token:${GH_PAT}@github.com/${REPO}.git
+          git -C ${DEST} remote set-url origin https://${GH_PAT}@github.com/${REPO}.git
 
           cp skills/${SKILL}/SKILL.md   ${DEST}/SKILL.md
           cp skills/${SKILL}/VERSION.md ${DEST}/VERSION.md
