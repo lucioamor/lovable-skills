@@ -1,8 +1,6 @@
 # Lucio's Lovable Skills
 
-A collection of reusable Lovable Skills by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
-
-These are skills I built and use to make Lovable projects easier to review, understand, and improve — whether you are working alone, with a team, or with other AI tools.
+A collection of reusable Lovable Skills built and used to make Lovable projects easier to review, understand, and improve — whether you are working alone, with a team, or with other AI tools.
 
 ## What is a Skill?
 
