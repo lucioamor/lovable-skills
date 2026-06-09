@@ -17,3 +17,4 @@ The `SKILL.md` frontmatter remains the source of truth; keep this record in sync
 | --- | --- |
 | `/wireframe` | Run /wireframe to map the active page (or root if unknown) with every real title, button, and section label in screen order. Add a page name to pick a specific page. Add "all" to map the whole app. Never invent copy. |
 | `/debate` | Run /debate to convene opposing specialists for a product, UI, UX, copy, architecture, performance, data, or security decision. It inspects relevant code when needed, argues trade-offs, ends with a decision matrix and read, and does not implement. |
+| `/unbot` | Run /unbot to rewrite or generate prose so it reads as genuinely human-authored, not machine-generated. Applies nine editing levers — word choice, rhythm, hedges, structure, specificity, voice, transitions, punctuation, and assistant-voice stripping. Works across marketing, email, essays, social, and docs. Does not fabricate facts. |

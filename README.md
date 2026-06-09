@@ -14,6 +14,7 @@ Skills are different from Project Knowledge. Project Knowledge stores facts your
 | --- | --- |
 | `/wireframe` | Reads your entire app and writes a plain-text document with every page's real layout, text, buttons, filters, and interactive elements. Great for sharing context with other AI tools or reviewers. |
 | `/debate` | Brings in a panel of opposing specialists to pressure-test a decision before you build it — covering product, design, copy, technical, and data angles. |
+| `/unbot` | Rewrites prose to read as genuinely human-authored. Strips word-choice, rhythm, punctuation, and structural tells that mark machine-generated text while keeping every fact intact. |
 
 All skills are available at: [lucioamor/lovable-skills](https://github.com/lucioamor/lovable-skills)
 
@@ -30,6 +31,7 @@ Paste the link for the skill you want:
 ```text
 https://github.com/lucioamor/lovable-skill-wireframe
 https://github.com/lucioamor/lovable-skill-debate
+https://github.com/lucioamor/lovable-skill-unbot
 ```
 
 Lovable imports one skill at a time. You can add both.
@@ -40,7 +42,7 @@ Do not paste this catalog page URL. Use the individual skill links above.
 
 Run `/wireframe` first to get a clear picture of what your app currently looks like.
 
-Then run `/debate` when the next decision is not obvious, or when you want to find blind spots before committing.
+Then run `/debate` when the next decision is not obvious, or when you want to find blind spots before committing. Then run `/unbot` when the chosen direction needs final copy that reads like a real person wrote it.
 
 Example:
 
@@ -52,6 +54,12 @@ Then:
 
 ```text
 /debate based on WIREFRAME.md, why does the sign-up flow feel confusing?
+```
+
+Then:
+
+```text
+/unbot [paste the chosen copy direction here]
 ```
 
 This works especially well when switching between Lovable and external AI tools like ChatGPT, Claude, Gemini, or Grok — or when sharing context with a reviewer, client, or teammate.
@@ -105,6 +113,21 @@ It does not implement anything. It ends with trade-offs, a decision matrix, and 
 Full instructions: [`skills/debate/SKILL.md`](./skills/debate/SKILL.md)  
 Skill README: [`skills/debate/README.md`](./skills/debate/README.md)
 
+### `/unbot`
+
+```text
+/unbot [paste your text here]
+```
+
+`/unbot` rewrites prose to read as genuinely human-authored. It applies nine editing levers — word choice, sentence rhythm, hedge surgery, structural flattening, specificity, voice, human transitions, punctuation correction, and assistant-voice stripping — matched to the register of the text (marketing, email, social, docs, long-form).
+
+Supply a writing sample and the skill will match your voice instead of a generic human default. Works in English and Brazilian Portuguese.
+
+It does not invent facts, help text pass a detector, or touch meaning — form changes, claims don't.
+
+Full instructions: [`skills/unbot/SKILL.md`](./skills/unbot/SKILL.md)  
+Skill README: [`skills/unbot/README.md`](./skills/unbot/README.md)
+
 ## Repositories
 
 | Repository | Purpose |
@@ -112,6 +135,7 @@ Skill README: [`skills/debate/README.md`](./skills/debate/README.md)
 | [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills) | Central home for all skills. Start here. |
 | [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) | Import-ready `/wireframe` skill. |
 | [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) | Import-ready `/debate` skill. |
+| [`lucioamor/lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) | Import-ready `/unbot` skill. |
 
 ## Versioning
 
@@ -129,6 +153,7 @@ Current published versions:
 | --- | --- | --- |
 | `/wireframe` | `v1.1.0` | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
 | `/debate` | `v1.0.0` | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
+| `/unbot` | `v1.0.0` | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
 
 If a skill shows an older version, re-import its repository in Lovable to update it.
 
@@ -191,6 +216,7 @@ Lovable's import tool requires a GitHub repository with a `SKILL.md` at the root
 
 - [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe)
 - [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate)
+- [`lucioamor/lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot)
 
 These standalone repositories are export targets, not editing targets. The canonical source lives in `skills/<skill-name>/SKILL.md` in this catalog. When a skill is updated here, the corresponding standalone repository should be synced.
 
