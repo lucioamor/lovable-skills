@@ -34,7 +34,7 @@ https://github.com/lucioamor/lovable-skill-debate
 https://github.com/lucioamor/lovable-skill-unbot
 ```
 
-Lovable imports one skill at a time. You can add both.
+Lovable imports one skill at a time. You can add each skill separately.
 
 Do not paste this catalog page URL. Use the individual skill links above.
 
@@ -159,15 +159,23 @@ If a skill shows an older version, re-import its repository in Lovable to update
 
 Maintainer workflow: [`MAINTENANCE.md`](./MAINTENANCE.md)
 
-## About the author
+## Authorship and maintenance
 
-Created and maintained by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+This project was created by [Lucio Amorim](https://linkedin.com/in/lucioamorim), Lovable Ambassador.
 
-These skills are practical infrastructure for builders who use Lovable seriously: not just to generate apps, but to review them, move context between tools, pressure-test decisions, and make better product choices faster.
+When reusing, redistributing, or citing this work, keep the attribution credits and include a link to this repository.
 
 ## License
 
-[MIT](./LICENSE)
+This catalog and the standalone skill repositories are licensed under
+[Creative Commons Attribution 4.0 International](./LICENSE) (`CC BY 4.0`).
+
+That means you may copy, share, adapt, remix, publish, and use these skills,
+including commercially, as long as you give appropriate credit to
+[Lucio Amorim](https://www.linkedin.com/in/lucioamorim), link to the license,
+and indicate whether you made changes.
+
+In plain terms: you can use the skills freely, but attribution is required.
 
 ---
 

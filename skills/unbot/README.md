@@ -111,8 +111,17 @@ Lovable imports one skill at a time. For the full catalog, see [`lovable-skills`
 
 Run `/debate` → `/wireframe` → `/unbot` when a copy decision needs to be tested, grounded in the real app, and then written like a human.
 
-## Author
+## License
 
-Created and maintained by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+This skill is licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (`CC BY 4.0`).
 
-This is a community-built skill for builders who want Lovable's output to sound like they wrote it — not like an AI trying to sound helpful.
+That means you may copy, share, adapt, remix, publish, and use it, including commercially, as long as you give appropriate credit to [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), link to the license, and indicate whether you made changes.
+
+In plain terms: you can use `/unbot` freely, but attribution is required.
+
+## Authorship and maintenance
+
+This project was created by [Lucio Amorim](https://linkedin.com/in/lucioamorim), Lovable Ambassador.
+
+When reusing, redistributing, or citing this work, keep the attribution credits and include a link to this repository.
+
