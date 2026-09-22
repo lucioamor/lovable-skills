@@ -1,7 +1,7 @@
-# JEVify Diagnostic Skill Version
+# jevify diagnostic skill version
 
-Current version: `v1.1.0`
+Current version: `v1.1.1`
 
 Source repo: `https://github.com/lucioamor/lovable-skill-jevify`
 
-This release unifies the project under JEVify, separates the diagnostic skill from implementation, and uses `JEV_CANDIDATE` as the report classification for candidates to evaluate with JEV.
+This maintenance release standardizes lowercase jevify branding and English public documentation. Diagnostic classifications and read-only behavior remain unchanged.

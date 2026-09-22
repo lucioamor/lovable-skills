@@ -15,7 +15,7 @@ Skills are different from Project Knowledge. Project Knowledge stores facts your
 | `/wireframe` | Reads your entire app and writes a plain-text document with every page's real layout, text, buttons, filters, and interactive elements. Great for sharing context with other AI tools or reviewers. |
 | `/debate` | Brings in a panel of opposing specialists to pressure-test a decision before you build it — covering product, design, copy, technical, and data angles. |
 | `/unbot` | Rewrites prose to read as genuinely human-authored. Strips word-choice, rhythm, punctuation, and structural tells that mark machine-generated text while keeping every fact intact. |
-| `/jevify` | JEVify's basic read-only diagnostic skill. Audits runtime AI calls, distinguishes generation from structured decisions, and proposes candidates for JEV in a report. |
+| `/jevify` | jevify's basic read-only diagnostic skill. Audits runtime AI calls, distinguishes generation from structured decisions, and proposes candidates for JEV in a report. |
 
 All skills are available at: [lucioamor/lovable-skills](https://github.com/lucioamor/lovable-skills)
 
@@ -132,7 +132,7 @@ Skill README: [`skills/unbot/README.md`](./skills/unbot/README.md)
 
 ### `/jevify`
 
-Run `/jevify`, JEVify's basic diagnostic skill, to audit runtime AI calls in your Lovable project. It returns an inventory, candidates for JEV, risks, and next steps in chat. It does not change code or reduce build credits. The JEVify repository houses the project; implementation remains a separate follow-up.
+Run `/jevify`, jevify's basic diagnostic skill, to audit runtime AI calls in your Lovable project. It returns an inventory, candidates for JEV, risks, and next steps in chat. It does not change code or reduce build credits. The jevify repository houses the project; implementation remains a separate follow-up.
 
 - Full instructions: [`skills/jevify/SKILL.md`](./skills/jevify/SKILL.md).
 - Skill README: [`skills/jevify/README.md`](./skills/jevify/README.md).
@@ -165,7 +165,7 @@ Current published versions:
 | `/wireframe` | `v1.1.0` | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
 | `/debate` | `v1.0.0` | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
 | `/unbot` | `v1.0.0` | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
-| `/jevify` | `v1.1.0` | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
+| `/jevify` | `v1.1.1` | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
 
 If a skill shows an older version, re-import its repository in Lovable to update it.
 
