@@ -15,6 +15,7 @@ Skills are different from Project Knowledge. Project Knowledge stores facts your
 | `/wireframe` | Reads your entire app and writes a plain-text document with every page's real layout, text, buttons, filters, and interactive elements. Great for sharing context with other AI tools or reviewers. |
 | `/debate` | Brings in a panel of opposing specialists to pressure-test a decision before you build it — covering product, design, copy, technical, and data angles. |
 | `/unbot` | Rewrites prose to read as genuinely human-authored. Strips word-choice, rhythm, punctuation, and structural tells that mark machine-generated text while keeping every fact intact. |
+| `/jevify` | Audits runtime AI calls, distinguishes generation from structured decisions, and proposes System One candidates in a report without changing code. |
 
 All skills are available at: [lucioamor/lovable-skills](https://github.com/lucioamor/lovable-skills)
 
@@ -32,6 +33,7 @@ Paste the link for the skill you want:
 https://github.com/lucioamor/lovable-skill-wireframe
 https://github.com/lucioamor/lovable-skill-debate
 https://github.com/lucioamor/lovable-skill-unbot
+https://github.com/lucioamor/lovable-skill-jevify
 ```
 
 Lovable imports one skill at a time. You can add each skill separately.
@@ -128,6 +130,14 @@ It does not invent facts, help text pass a detector, or touch meaning — form c
 Full instructions: [`skills/unbot/SKILL.md`](./skills/unbot/SKILL.md)  
 Skill README: [`skills/unbot/README.md`](./skills/unbot/README.md)
 
+### `/jevify`
+
+Run `/jevify` to audit runtime AI calls in your Lovable project. It returns an inventory, candidate decision primitives, risks, and next steps in chat. It does not change code or reduce build credits.
+
+- Full instructions: [`skills/jevify/SKILL.md`](./skills/jevify/SKILL.md).
+- Skill README: [`skills/jevify/README.md`](./skills/jevify/README.md).
+- Claude Code variant and report template: [`lucioamor/jevify`](https://github.com/lucioamor/jevify).
+
 ## Repositories
 
 | Repository | Purpose |
@@ -136,6 +146,7 @@ Skill README: [`skills/unbot/README.md`](./skills/unbot/README.md)
 | [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) | Import-ready `/wireframe` skill. |
 | [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) | Import-ready `/debate` skill. |
 | [`lucioamor/lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) | Import-ready `/unbot` skill. |
+| [`lucioamor/lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) | Import-ready `/jevify` skill. |
 
 ## Versioning
 
@@ -154,6 +165,7 @@ Current published versions:
 | `/wireframe` | `v1.1.0` | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
 | `/debate` | `v1.0.0` | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
 | `/unbot` | `v1.0.0` | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
+| `/jevify` | `v1.0.0` | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
 
 If a skill shows an older version, re-import its repository in Lovable to update it.
 
@@ -225,6 +237,7 @@ Lovable's import tool requires a GitHub repository with a `SKILL.md` at the root
 - [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe)
 - [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate)
 - [`lucioamor/lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot)
+- [`lucioamor/lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify)
 
 These standalone repositories are export targets, not editing targets. The canonical source lives in `skills/<skill-name>/SKILL.md` in this catalog. When a skill is updated here, the corresponding standalone repository should be synced.
 

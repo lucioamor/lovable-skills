@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        skill: [wireframe, debate]
+        skill: [wireframe, debate, jevify]
     steps:
       - uses: actions/checkout@v4
 
@@ -32,7 +32,11 @@ jobs:
           cp skills/${SKILL}/SKILL.md   ${DEST}/SKILL.md
           cp skills/${SKILL}/VERSION.md ${DEST}/VERSION.md
           cp skills/${SKILL}/README.md  ${DEST}/README.md
-          cp LICENSE                    ${DEST}/LICENSE
+          if [ -f skills/${SKILL}/LICENSE ]; then
+            cp skills/${SKILL}/LICENSE ${DEST}/LICENSE
+          else
+            cp LICENSE ${DEST}/LICENSE
+          fi
 
           cd ${DEST}
           git config user.name  "github-actions[bot]"

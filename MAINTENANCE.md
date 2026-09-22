@@ -60,6 +60,7 @@ An export workflow should:
 - write import-ready standalone folders
 - preserve each skill's root `SKILL.md`
 - include `VERSION.md`
+- include `skills/<skill>/LICENSE` when present, otherwise the catalog root `LICENSE`
 - include the skill README when useful for the standalone repo
 - exclude maintainer-only catalog files
 - fail if `SKILL.md` and `VERSION.md` disagree on the version
