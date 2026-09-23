@@ -1,7 +1,7 @@
-# jevify diagnostic skill version
+# jevify skill version
 
-Current version: `v1.1.1`
+Current version: `v1.2.0`
 
 Source repo: `https://github.com/lucioamor/lovable-skill-jevify`
 
-This maintenance release standardizes lowercase jevify branding and English public documentation. Diagnostic classifications and read-only behavior remain unchanged.
+This release adds `/jevify migrate <finding>`, which moves one approved candidate to JEV behind an `off | shadow | on` flag, starting in shadow mode and keeping the current AI path as fallback. Both commands use the jevify MCP connector when it is added and run locally otherwise. `/jevify` remains read-only.
