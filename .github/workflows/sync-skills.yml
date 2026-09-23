@@ -11,8 +11,10 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     strategy:
+      # One skill's failure must not cancel the other syncs.
+      fail-fast: false
       matrix:
-        skill: [wireframe, debate, jevify]
+        skill: [wireframe, debate, unbot, jevify]
     steps:
       - uses: actions/checkout@v4
 
