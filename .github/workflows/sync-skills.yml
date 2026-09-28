@@ -8,20 +8,6 @@ on:
       - 'LICENSE'
 
 jobs:
-  check-jevify-mirror:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Compare jevify with canonical source
-        run: |
-          curl --fail --silent --show-error --location \
-            https://raw.githubusercontent.com/lucioamor/jevify/main/skills/jevify/SKILL.md \
-            --output /tmp/jevify-SKILL.md
-          cmp --silent skills/jevify/SKILL.md /tmp/jevify-SKILL.md || {
-            echo "skills/jevify/SKILL.md differs from lucioamor/jevify"
-            exit 1
-          }
-
   sync:
     runs-on: ubuntu-latest
     strategy:
@@ -31,6 +17,17 @@ jobs:
         skill: [wireframe, debate, unbot, jevify]
     steps:
       - uses: actions/checkout@v4
+
+      - name: Check jevify mirror against its canonical source
+        if: matrix.skill == 'jevify'
+        run: |
+          curl --fail --silent --show-error --location \
+            https://raw.githubusercontent.com/lucioamor/jevify/main/skills/jevify/SKILL.md \
+            --output /tmp/jevify-SKILL.md
+          cmp --silent skills/jevify/SKILL.md /tmp/jevify-SKILL.md || {
+            echo "skills/jevify/SKILL.md differs from lucioamor/jevify main. Merge the canonical change first, then run scripts/export-lovable.mjs there."
+            exit 1
+          }
 
       - name: Sync ${{ matrix.skill }} to standalone repo
         env:

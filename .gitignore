@@ -14,3 +14,6 @@ Desktop.ini
 
 # Local drafts and backups
 .backup/
+
+# Local agent settings
+.claude/settings.local.json

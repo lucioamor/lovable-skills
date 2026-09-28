@@ -15,7 +15,7 @@ The `SKILL.md` frontmatter remains the source of truth; keep this record in sync
 
 | Skill | Description |
 | --- | --- |
-| `/jevify` | Audit runtime AI calls in a repository or Lovable project, verify structured-decision candidates, and migrate one approved finding to JEV in shadow mode. Reports in chat or jevify-report.md; audit never edits source. |
+| `/jevify` | Run /jevify to audit an app's runtime AI calls (repository or Lovable project) and flag structured decisions that fit JEV; the audit never edits source. Run /jevify migrate <finding> to move one approved candidate to JEV, shadow mode first. |
 | `/wireframe` | Run /wireframe to map the active page (or root if unknown) with every real title, button, and section label in screen order. Add a page name to pick a specific page. Add "all" to map the whole app. Never invent copy. |
 | `/debate` | Run /debate to convene opposing specialists for a product, UI, UX, copy, architecture, performance, data, or security decision. It inspects relevant code when needed, argues trade-offs, ends with a decision matrix and read, and does not implement. |
 | `/unbot` | Run /unbot to rewrite or generate prose so it reads as genuinely human-authored, not machine-generated. Applies nine editing levers — word choice, rhythm, hedges, structure, specificity, voice, transitions, punctuation, and assistant-voice stripping. Works across marketing, email, essays, social, and docs. Does not fabricate facts. |
