@@ -2,6 +2,8 @@
 
 This repo is the source catalog for the Lovable skills. Standalone import repos are generated or synced from this repo; they are not the place to author skill behavior.
 
+Exception: `skills/jevify` is generated from `lucioamor/jevify`; never edit it here. Run the canonical repository's export script and review the resulting catalog diff.
+
 ## Source of truth
 
 The main file for each skill is:
