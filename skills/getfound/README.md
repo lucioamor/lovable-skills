@@ -2,7 +2,7 @@
 
 `/getfound` makes a Lovable site easier for search engines and AI systems to find, understand and cite — working only on what Lovable's native SEO & AI search review does not already cover.
 
-It is a community-built Lovable Skill by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+It is a community-built Lovable Skill by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Partner in Brazil.
 
 Central catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)  
 Standalone import repo: [`lucioamor/lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound)
@@ -77,12 +77,34 @@ Repeats equivalent observations against an earlier baseline.
 
 - [SKILL.md](./SKILL.md) — complete instructions used by Lovable.
 - [VERSION.md](./VERSION.md) — version and release status.
-- License: [CC BY 4.0](https://github.com/lucioamor/lovable-skills/blob/main/LICENSE).
 
 The canonical source lives in the central catalog at `skills/getfound/`; the standalone repo is synced from it. Edit the catalog, not the standalone repo.
 
+## Related skills
+
+Run `/wireframe` first to map pages, and `/unbot` on rewritten passages that must read as human-authored.
+
+Each skill is imported separately from its own repository:
+
+| Skill | What it does | Import repo |
+| --- | --- | --- |
+| `/wireframe` | Maps your app's real pages, copy, layout and interactive elements into a plain-text `WIREFRAME.md`. | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
+| `/debate` | Pressure-tests a product, UX, copy or technical decision with opposing specialists before you build it. | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
+| `/unbot` | Rewrites prose so it reads as genuinely human-authored, keeping every fact intact. | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
+| `/jevify` | Audits runtime AI calls for JEV candidates; `/jevify migrate` moves one in shadow mode. | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
+
+Full catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)
+
+## License
+
+This skill is licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (`CC BY 4.0`). The full license text ships as `LICENSE` in the [standalone repository](https://github.com/lucioamor/lovable-skill-getfound) and in the [central catalog](https://github.com/lucioamor/lovable-skills/blob/main/LICENSE).
+
+That means you may copy, share, adapt, remix, publish, and use it, including commercially, as long as you give appropriate credit to [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), link to the license, and indicate whether you made changes.
+
+In plain terms: you can use `/getfound` freely, but attribution is required.
+
 ## Authorship and maintenance
 
-This project was created by [Lucio Amorim](https://linkedin.com/in/lucioamorim), Lovable Ambassador.
+This project was created by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Partner.
 
-When reusing, redistributing, or citing this work, keep the attribution credits and include a link to [this repository](https://github.com/lucioamor/lovable-skills).
+When reusing, redistributing, or citing this work, keep the attribution credits and include a link to the [central catalog](https://github.com/lucioamor/lovable-skills).

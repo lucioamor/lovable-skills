@@ -48,6 +48,8 @@ Run `/wireframe` first to get a clear picture of what your app currently looks l
 
 Then run `/debate` when the next decision is not obvious, or when you want to find blind spots before committing. Then run `/unbot` when the chosen direction needs final copy that reads like a real person wrote it.
 
+Run `/getfound` when the site needs to be found, understood and cited by search engines and AI beyond Lovable's native SEO review, and `/jevify` when the app makes runtime AI calls that might be cheaper or more reliable as structured decisions.
+
 Example:
 
 ```text
@@ -183,8 +185,8 @@ Current published versions:
 | `/wireframe` | `v1.1.0` | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
 | `/debate` | `v1.0.0` | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
 | `/unbot` | `v1.0.0` | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
-| `/jevify` | `v1.2.0` | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
-| `/getfound` | `v1.0.0` | [`lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound) |
+| `/jevify` | `v1.4.0` | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
+| `/getfound` | `v1.0.1` | [`lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound) |
 
 If a skill shows an older version, re-import its repository in Lovable to update it.
 
@@ -192,7 +194,7 @@ Maintainer workflow: [`MAINTENANCE.md`](./MAINTENANCE.md)
 
 ## Authorship and maintenance
 
-This project was created by [Lucio Amorim](https://linkedin.com/in/lucioamorim), Lovable Ambassador.
+This project was created by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Partner.
 
 When reusing, redistributing, or citing this work, keep the attribution credits and include a link to this repository.
 
@@ -240,11 +242,12 @@ lovable-skills/
 │   │   ├── SKILL.md       ← authoritative skill instructions
 │   │   ├── README.md      ← user-facing documentation
 │   │   └── VERSION.md     ← current version
-│   └── debate/
-│       ├── SKILL.md
-│       ├── README.md
-│       └── VERSION.md
+│   ├── debate/            ← same three files in every skill folder
+│   ├── unbot/
+│   ├── getfound/
+│   └── jevify/            ← generated mirror of lucioamor/jevify (+ LICENSE); do not edit here
 ├── examples/              ← sample output files
+├── LICENSE                ← CC BY 4.0, copied into every standalone repo
 ├── MAINTENANCE.md         ← maintainer workflow
 └── SKILL_METADATA.md      ← description contract
 ```

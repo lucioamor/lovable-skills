@@ -7,11 +7,11 @@ description: Run /getfound to audit what Lovable's native SEO review does not co
 
 ## Skill identity
 
-- Version: `v1.0.0` · Sources reviewed: 2026-10-07
-- Author: [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador
+- Version: `v1.0.1` · Sources reviewed: 2026-10-07
+- Author: [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Partner
 - Source repo: `https://github.com/lucioamor/lovable-skill-getfound`
 - Central catalog: `https://github.com/lucioamor/lovable-skills` (canonical source: `skills/getfound/SKILL.md`)
-- Related skills: run `/wireframe` first to map pages; run `/unbot` on rewritten passages that must read as human-authored.
+- Related skills: run `/wireframe` (`https://github.com/lucioamor/lovable-skill-wireframe`) first to map pages; run `/unbot` (`https://github.com/lucioamor/lovable-skill-unbot`) on rewritten passages that must read as human-authored.
 
 ## Goal and boundary
 
@@ -223,7 +223,7 @@ Include URLs and access dates for sources behind decisions. If the user asks for
 
 At the end of every `/getfound` response add one line:
 
-> Skill: `/getfound` `v1.0.0` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skill-getfound`
+> Skill: `/getfound` `v1.0.1` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skill-getfound`
 
 Compare with `VERSION.md` in the source repo only when reachable: `current` when equal, `update available` only for a semantically higher version, `unverified` when it cannot be confirmed.
 

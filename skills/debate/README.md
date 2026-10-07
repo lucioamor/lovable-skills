@@ -2,7 +2,7 @@
 
 `/debate` runs a structured expert panel with opposing schools of thought, then ends with a decision matrix and a clear read.
 
-It is a community-built Lovable Skill by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
+It is a community-built Lovable Skill by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Partner in Brazil.
 
 Central catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)  
 Standalone import repo: [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate)
@@ -130,7 +130,7 @@ If the prompt is vague, it asks at most once and then proceeds with its best dia
 Open:
 
 ```text
-Settings -> Skills -> Add -> Import from GitHub
+Settings → Skills → Add → Import from GitHub
 ```
 
 Then paste:
@@ -141,15 +141,24 @@ https://github.com/lucioamor/lovable-skill-debate
 
 Lovable imports one skill at a time. For the full catalog, see [`lovable-skills`](https://github.com/lucioamor/lovable-skills).
 
-## Related skill
+## Related skills
 
-[`/wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) generates a plain-text `WIREFRAME.md` from the real app.
+Run `/wireframe` first when a debate needs the real app as context, and `/unbot` after it when the chosen direction needs final copy.
 
-Use `/wireframe` first when `/debate` needs a complete map of routes, copy, layout, and component structure.
+Each skill is imported separately from its own repository:
+
+| Skill | What it does | Import repo |
+| --- | --- | --- |
+| `/wireframe` | Maps your app's real pages, copy, layout and interactive elements into a plain-text `WIREFRAME.md`. | [`lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe) |
+| `/unbot` | Rewrites prose so it reads as genuinely human-authored, keeping every fact intact. | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
+| `/jevify` | Audits runtime AI calls for JEV candidates; `/jevify migrate` moves one in shadow mode. | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
+| `/getfound` | Gets your site found, understood and cited by search engines and AI, beyond Lovable's native SEO review. | [`lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound) |
+
+Full catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)
 
 ## License
 
-This skill is licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (`CC BY 4.0`).
+This skill is licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) (`CC BY 4.0`). The full license text ships as `LICENSE` in the [standalone repository](https://github.com/lucioamor/lovable-skill-debate) and in the [central catalog](https://github.com/lucioamor/lovable-skills/blob/main/LICENSE).
 
 That means you may copy, share, adapt, remix, publish, and use it, including commercially, as long as you give appropriate credit to [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), link to the license, and indicate whether you made changes.
 
@@ -157,7 +166,6 @@ In plain terms: you can use `/debate` freely, but attribution is required.
 
 ## Authorship and maintenance
 
-This project was created by [Lucio Amorim](https://linkedin.com/in/lucioamorim), Lovable Ambassador.
+This project was created by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Partner.
 
-When reusing, redistributing, or citing this work, keep the attribution credits and include a link to this repository.
-
+When reusing, redistributing, or citing this work, keep the attribution credits and include a link to the [central catalog](https://github.com/lucioamor/lovable-skills).

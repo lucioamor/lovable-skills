@@ -1,12 +1,17 @@
 # Getfound Skill Version
 
-Current version: `v1.0.0`
+Current version: `v1.0.1`
 
 Canonical source: `skills/getfound/SKILL.md` in `lucioamor/lovable-skills`.
 
 Source repo: `https://github.com/lucioamor/lovable-skill-getfound`
 
 Release state: published to the standalone import repo; Lovable runtime validation pending.
+
+## v1.0.1
+
+- Author attribution updated to Lovable Partner.
+- Related skills now link to their standalone import repositories.
 
 ## v1.0.0
 
