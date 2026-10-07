@@ -16,11 +16,9 @@ Skills are different from Project Knowledge. Project Knowledge stores facts your
 | `/debate` | Brings in a panel of opposing specialists to pressure-test a decision before you build it — covering product, design, copy, technical, and data angles. |
 | `/unbot` | Rewrites prose to read as genuinely human-authored. Strips word-choice, rhythm, punctuation, and structural tells that mark machine-generated text while keeping every fact intact. |
 | `/jevify` | Audits runtime AI calls, distinguishes generation from structured decisions, and proposes candidates for JEV in a report. `/jevify migrate` then moves one approved candidate to JEV, starting in shadow mode. |
-| `/getfound` | Makes your site easier for search engines and AI to find, understand and cite — entity identity, claim evidence, AI-crawler access, Markdown fidelity, bilingual parity and real AI citations. Covers only what Lovable's native SEO review does not, and applies safe fixes. Import link coming soon. |
+| `/getfound` | Makes your site easier for search engines and AI to find, understand and cite — entity identity, claim evidence, AI-crawler access, Markdown fidelity, bilingual parity and real AI citations. Covers only what Lovable's native SEO review does not, and applies safe fixes. |
 
 All skills are available at: [lucioamor/lovable-skills](https://github.com/lucioamor/lovable-skills)
-
-`/getfound` does not have a standalone import link yet; its source is [`skills/getfound/SKILL.md`](./skills/getfound/SKILL.md).
 
 ## How to add a skill to Lovable
 
@@ -37,6 +35,7 @@ https://github.com/lucioamor/lovable-skill-wireframe
 https://github.com/lucioamor/lovable-skill-debate
 https://github.com/lucioamor/lovable-skill-unbot
 https://github.com/lucioamor/lovable-skill-jevify
+https://github.com/lucioamor/lovable-skill-getfound
 ```
 
 Lovable imports one skill at a time. You can add each skill separately.
@@ -165,6 +164,7 @@ Skill README: [`skills/getfound/README.md`](./skills/getfound/README.md)
 | [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) | Import-ready `/debate` skill. |
 | [`lucioamor/lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) | Import-ready `/unbot` skill. |
 | [`lucioamor/lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) | Import-ready `/jevify` skill. |
+| [`lucioamor/lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound) | Import-ready `/getfound` skill. |
 
 ## Versioning
 
@@ -184,7 +184,7 @@ Current published versions:
 | `/debate` | `v1.0.0` | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
 | `/unbot` | `v1.0.0` | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
 | `/jevify` | `v1.2.0` | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
-| `/getfound` | `v1.0.0` | Not published yet — [`skills/getfound`](./skills/getfound/VERSION.md) |
+| `/getfound` | `v1.0.0` | [`lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound) |
 
 If a skill shows an older version, re-import its repository in Lovable to update it.
 
@@ -257,6 +257,7 @@ Lovable's import tool requires a GitHub repository with a `SKILL.md` at the root
 - [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate)
 - [`lucioamor/lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot)
 - [`lucioamor/lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify)
+- [`lucioamor/lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound)
 
 These standalone repositories are export targets, not editing targets. The canonical source lives in `skills/<skill-name>/SKILL.md` in this catalog. When a skill is updated here, the corresponding standalone repository should be synced.
 

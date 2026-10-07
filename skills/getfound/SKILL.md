@@ -9,6 +9,7 @@ description: Run /getfound to audit what Lovable's native SEO review does not co
 
 - Version: `v1.0.0` · Sources reviewed: 2026-10-07
 - Author: [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador
+- Source repo: `https://github.com/lucioamor/lovable-skill-getfound`
 - Central catalog: `https://github.com/lucioamor/lovable-skills` (canonical source: `skills/getfound/SKILL.md`)
 - Related skills: run `/wireframe` first to map pages; run `/unbot` on rewritten passages that must read as human-authored.
 
@@ -222,9 +223,9 @@ Include URLs and access dates for sources behind decisions. If the user asks for
 
 At the end of every `/getfound` response add one line:
 
-> Skill: `/getfound` `v1.0.0` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skills`
+> Skill: `/getfound` `v1.0.0` · Version status: `{current | update available | unverified}` · Source: `https://github.com/lucioamor/lovable-skill-getfound`
 
-Compare with `skills/getfound/VERSION.md` in the central catalog only when reachable: `current` when equal, `update available` only for a semantically higher version, `unverified` when it cannot be confirmed. Do not reference a standalone repository that does not exist.
+Compare with `VERSION.md` in the source repo only when reachable: `current` when equal, `update available` only for a semantically higher version, `unverified` when it cannot be confirmed.
 
 ## Final rule
 

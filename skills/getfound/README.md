@@ -4,7 +4,18 @@
 
 It is a community-built Lovable Skill by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Ambassador in Brazil.
 
-Central catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)
+Central catalog: [`lucioamor/lovable-skills`](https://github.com/lucioamor/lovable-skills)  
+Standalone import repo: [`lucioamor/lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound)
+
+## Import into Lovable
+
+**Settings → Skills → Add → Import from GitHub**, then paste:
+
+```text
+https://github.com/lucioamor/lovable-skill-getfound
+```
+
+Re-import to update.
 
 ## Why this exists
 
@@ -66,9 +77,9 @@ Repeats equivalent observations against an earlier baseline.
 
 - [SKILL.md](./SKILL.md) — complete instructions used by Lovable.
 - [VERSION.md](./VERSION.md) — version and release status.
-- License: the catalog's [CC BY 4.0](../../LICENSE), included when exporting a standalone package.
+- License: [CC BY 4.0](https://github.com/lucioamor/lovable-skills/blob/main/LICENSE).
 
-The standalone import repository is not published yet. Until it exists, use the catalog source above; do not rely on an invented repository URL.
+The canonical source lives in the central catalog at `skills/getfound/`; the standalone repo is synced from it. Edit the catalog, not the standalone repo.
 
 ## Authorship and maintenance
 

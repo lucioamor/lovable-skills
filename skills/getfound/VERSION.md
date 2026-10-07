@@ -4,7 +4,9 @@ Current version: `v1.0.0`
 
 Canonical source: `skills/getfound/SKILL.md` in `lucioamor/lovable-skills`.
 
-Release state: local package prepared; standalone import repository and Lovable runtime validation pending.
+Source repo: `https://github.com/lucioamor/lovable-skill-getfound`
+
+Release state: published to the standalone import repo; Lovable runtime validation pending.
 
 ## v1.0.0
 
