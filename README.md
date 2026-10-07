@@ -16,8 +16,11 @@ Skills are different from Project Knowledge. Project Knowledge stores facts your
 | `/debate` | Brings in a panel of opposing specialists to pressure-test a decision before you build it — covering product, design, copy, technical, and data angles. |
 | `/unbot` | Rewrites prose to read as genuinely human-authored. Strips word-choice, rhythm, punctuation, and structural tells that mark machine-generated text while keeping every fact intact. |
 | `/jevify` | Audits runtime AI calls, distinguishes generation from structured decisions, and proposes candidates for JEV in a report. `/jevify migrate` then moves one approved candidate to JEV, starting in shadow mode. |
+| `/getfound` | Makes your site easier for search engines and AI to find, understand and cite — entity identity, claim evidence, AI-crawler access, Markdown fidelity, bilingual parity and real AI citations. Covers only what Lovable's native SEO review does not, and applies safe fixes. Import link coming soon. |
 
 All skills are available at: [lucioamor/lovable-skills](https://github.com/lucioamor/lovable-skills)
+
+`/getfound` does not have a standalone import link yet; its source is [`skills/getfound/SKILL.md`](./skills/getfound/SKILL.md).
 
 ## How to add a skill to Lovable
 
@@ -140,6 +143,19 @@ Run `/jevify migrate <finding>` to move one candidate to JEV. It explains the pl
 - Skill README: [`skills/jevify/README.md`](./skills/jevify/README.md).
 - Claude Code variant and report template: [`lucioamor/jevify`](https://github.com/lucioamor/jevify).
 
+### `/getfound`
+
+```text
+/getfound [URL or scope]
+```
+
+`/getfound` works on the gap Lovable's native SEO & AI search review leaves open: entity identity and JSON-LD graph (`@id`, `sameAs`, `knowsAbout`), a ledger of claims with sources, what verified crawlers and unverified AI agents actually receive, Markdown fidelity, an AI-crawler policy by purpose, bilingual parity (hreflang, same facts in EN and PT-BR), agent files such as `llms.txt` and `.well-known/agent-skills/`, and a reproducible protocol to check what AI engines say and cite.
+
+By default it audits and then applies the fixes that are local, reversible and backed by evidence. Run `/getfound audit` for a report only, or `/getfound compare` to re-measure against an earlier baseline. It never publishes, edits external profiles, invents facts, or promises rankings or citations.
+
+Full instructions: [`skills/getfound/SKILL.md`](./skills/getfound/SKILL.md)  
+Skill README: [`skills/getfound/README.md`](./skills/getfound/README.md)
+
 ## Repositories
 
 | Repository | Purpose |
@@ -168,6 +184,7 @@ Current published versions:
 | `/debate` | `v1.0.0` | [`lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate) |
 | `/unbot` | `v1.0.0` | [`lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot) |
 | `/jevify` | `v1.2.0` | [`lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify) |
+| `/getfound` | `v1.0.0` | Not published yet — [`skills/getfound`](./skills/getfound/VERSION.md) |
 
 If a skill shows an older version, re-import its repository in Lovable to update it.
 

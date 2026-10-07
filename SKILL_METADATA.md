@@ -15,6 +15,7 @@ The `SKILL.md` frontmatter remains the source of truth; keep this record in sync
 
 | Skill | Description |
 | --- | --- |
+| `/getfound` | Run /getfound to audit what Lovable's native SEO review does not cover - entity identity, claim evidence, AI-crawler access, Markdown fidelity, i18n parity and AI citations - and apply safe local fixes. /getfound audit only reports; /getfound compare re-measures. |
 | `/jevify` | Run /jevify to audit an app's runtime AI calls (repository or Lovable project) and flag structured decisions that fit JEV; the audit never edits source. Run /jevify migrate <finding> to move one approved candidate to JEV, shadow mode first. |
 | `/wireframe` | Run /wireframe to map the active page (or root if unknown) with every real title, button, and section label in screen order. Add a page name to pick a specific page. Add "all" to map the whole app. Never invent copy. |
 | `/debate` | Run /debate to convene opposing specialists for a product, UI, UX, copy, architecture, performance, data, or security decision. It inspects relevant code when needed, argues trade-offs, ends with a decision matrix and read, and does not implement. |
