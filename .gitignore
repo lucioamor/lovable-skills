@@ -17,3 +17,6 @@ Desktop.ini
 
 # Local agent settings
 .claude/settings.local.json
+
+# Local maintainer notes (not published)
+MAINTENANCE.md

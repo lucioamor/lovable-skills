@@ -190,8 +190,6 @@ Current published versions:
 
 If a skill shows an older version, re-import its repository in Lovable to update it.
 
-Maintainer workflow: [`MAINTENANCE.md`](./MAINTENANCE.md)
-
 ## Authorship and maintenance
 
 This project was created by [Lucio Amorim](https://www.linkedin.com/in/lucioamorim), Lovable Partner.
@@ -248,33 +246,5 @@ lovable-skills/
 │   └── jevify/            ← generated mirror of lucioamor/jevify (+ LICENSE); do not edit here
 ├── examples/              ← sample output files
 ├── LICENSE                ← CC BY 4.0, copied into every standalone repo
-├── MAINTENANCE.md         ← maintainer workflow
 └── SKILL_METADATA.md      ← description contract
 ```
-
-### Standalone import repositories
-
-Lovable's import tool requires a GitHub repository with a `SKILL.md` at the root. Because of this, each skill also lives in its own standalone repository:
-
-- [`lucioamor/lovable-skill-wireframe`](https://github.com/lucioamor/lovable-skill-wireframe)
-- [`lucioamor/lovable-skill-debate`](https://github.com/lucioamor/lovable-skill-debate)
-- [`lucioamor/lovable-skill-unbot`](https://github.com/lucioamor/lovable-skill-unbot)
-- [`lucioamor/lovable-skill-jevify`](https://github.com/lucioamor/lovable-skill-jevify)
-- [`lucioamor/lovable-skill-getfound`](https://github.com/lucioamor/lovable-skill-getfound)
-
-These standalone repositories are export targets, not editing targets. The canonical source lives in `skills/<skill-name>/SKILL.md` in this catalog. When a skill is updated here, the corresponding standalone repository should be synced.
-
-The export contract is documented in [`MAINTENANCE.md`](./MAINTENANCE.md).
-
-### Versioning convention
-
-Each skill follows simple semantic versioning (`v1.0.0`). The version is stored in `VERSION.md` inside the skill folder and referenced inside `SKILL.md`. When a skill runs, it compares its installed version against the standalone repository's `VERSION.md` to report whether an update is available.
-
-### How to add a new skill
-
-1. Create `skills/<new-skill>/SKILL.md` with valid frontmatter and instructions.
-2. Create `skills/<new-skill>/VERSION.md` starting at `v1.0.0`.
-3. Create `skills/<new-skill>/README.md` for user-facing documentation.
-4. Update `README.md` (this file) and `SKILL_METADATA.md`.
-5. Create a new standalone import repository and sync the files there.
-6. Add the new repository link to the Repositories table above.
